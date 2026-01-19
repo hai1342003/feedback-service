@@ -1,11 +1,9 @@
 spring:
   application:
     name: feedback-service
-  jpa:
-    open-in-view: false
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 management:
   endpoints:
