@@ -20,6 +20,14 @@ public class Feedback {
     @Column(name = "created_at", nullable = false, updatable = false)
     private OffsetDateTime createdAt;
 
+    public Feedback() {
+    }
+
+    public Feedback(String email, String content) {
+        this.email = email;
+        this.content = content;
+    }
+
     @PrePersist
     void prePersist() {
         this.createdAt = OffsetDateTime.now();
@@ -27,10 +35,6 @@ public class Feedback {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getEmail() {
@@ -51,9 +55,5 @@ public class Feedback {
 
     public OffsetDateTime getCreatedAt() {
         return createdAt;
-    }
-
-    public void setCreatedAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
     }
 }
